@@ -1,0 +1,152 @@
+author			= "Terrafox";
+onLoadName		= "Солдаты удачи";
+onLoadMission	= "Совместными усилиями найдите и устраните диктатора - штурмбаннфюрера Террафокса. Он перемещается по острову на неизвестной машине.";
+briefingName 	= "Солдаты удачи v0.3";
+loadScreen		= "images\SOF2_1024x512_1.paa";
+disabledAI		= 1;
+//respawnOnStart = -1;
+
+class CfgFunctions
+{
+	class SOF
+	{
+		class AI
+		{
+			class RandomPatrolRoute {};
+			class EngageReportedGroup {};
+			class InCombat {};
+			class Move {};
+			class Search {};
+			class SearchDrone {};
+			class LeafletDrone {};
+			class Patrol {};
+			class Flee {};
+			class FireArtillery {};
+			class CallCAS {};
+			class OrderSearch {};
+			class SetTaskState {};
+			class GetTaskState {};
+			class AquaticPatrol {};
+			class AddStaticGunner {};
+			class ExtractionChopper {};
+		};
+		class Chronos
+		{
+			class Chronos_Init {};
+			class Chronos_Run {};
+			class Chronos_Register {};
+			class Chronos_Dispatch {};	
+		};
+		class DRN
+		{
+			class AmbientInfantry {}; 
+			class MoveInfantryGroup {}; 
+			class MonitorEmptyGroups {};
+			class PopulateLocation {};
+			class DepopulateLocation {};
+			class InitGuardedLocations {};
+			class DynamicWeatherEffects {};
+			class InsertionTruck {};
+			class MilitaryTraffic {};
+			class MoveVehicle {};
+			class MotorizedSearchGroup {};	
+			class SearchChopper {};
+			class SearchGroup {};
+			class InitVillageMarkers{};
+			class PopulateVillage {};
+			class DepopulateVillage {};
+			class InitVillagePatrols {};
+			class InitAquaticPatrols {};
+			class PopulateAquaticPatrol {};
+			class DepopulateAquaticPatrol {};
+			class InitAquaticPatrolMarkers {};
+			class GarrisonUnits {};
+		};
+	};
+};
+
+
+class CfgTaskTypes
+{
+	class Doc
+	{
+		icon = "images\doc.paa";
+	};
+	class Destroy
+	{
+		icon = "images\destroy.paa";
+	};
+	class Rescue
+	{
+		icon = "images\escape.paa";
+	};
+	class Assassination
+	{
+		icon = "images\kill.paa";
+	};
+	class Attack
+	{
+		icon = "images\attack.paa";
+	};
+};
+
+class CfgTaskDescriptions
+{
+	class Attack
+	{
+		title		= "Зачистка";
+		description	= "На этой позиции находятся верные штурмбаннфюреру войска. Очистите территорию от захватчиков.";
+		marker		= "Зачистить территорию";
+	};
+	class Assassination
+	{
+		title		= "Ликвидация";
+		description	= "Убийство высокопоставленного офицера посеет панику в рядах противника. Сделайте это без шума и пыли.";
+		marker		= "Убить офицера";
+	};
+	class Doc
+	{
+		title		= "Добыть снаряжение";
+		description	= "Как солдат без экипировки может считать себя хорошим солдатом? На метке Подводный мир расположена необычная структура. Найдите в ней терминал, который откроет доступ к юго-восточной башне на базе отряда. Поверьте, это вам пригодится в штурме базы Террафокса.";
+		marker		= "";
+	};
+	class Rescue
+	{
+		title		= "Спасение";
+		description	= "Силы противника захватили ";
+		marker		= "Убить офицера";
+	};
+};
+
+class CfgDebriefing
+    {
+        class End1
+        {
+            title = "Миссия выполнена";
+            subtitle = "";
+            description = "Террафокс получил по заслугам! Вы справились, солдаты удачи!";
+            pictureBackground = "";
+            picture = "";
+            pictureColor[] = {0.0,0.3,0.6,1};
+        };
+};
+
+class Header
+{
+	gameType =  Coop;	// Game type
+	minPlayers = 1;	// minimum number of players the mission supports
+	maxPlayers = 30;	// maximum number of players the mission supports
+};
+
+class Params
+{
+	class desc_side_mission_count
+	{
+		title = "Количество дополнительных миссий";
+		values[] = {3,4,5,10};
+		default = 5;
+		texts[] = {"3","4","5","10"};
+	};
+};
+
+#include "include\roles_and_equipment.hpp"
