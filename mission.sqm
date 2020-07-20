@@ -8,11 +8,11 @@ class EditorData
 	toggles=517;
 	class ItemIDProvider
 	{
-		nextID=1658;
+		nextID=1693;
 	};
 	class MarkerIDProvider
 	{
-		nextID=59;
+		nextID=60;
 	};
 	class LayerIndexProvider
 	{
@@ -20,10 +20,10 @@ class EditorData
 	};
 	class Camera
 	{
-		pos[]={8107.7437,1570.0536,3124.9385};
-		dir[]={-0.20001566,-0.81587493,0.54275149};
-		up[]={-0.28211847,0.57820541,0.76554853};
-		aside[]={0.93842846,4.3198888e-006,0.34582227};
+		pos[]={5959.4253,1845.8955,4826.8193};
+		dir[]={-0.24535432,-0.69385582,0.67720193};
+		up[]={-0.2363667,0.72005498,0.65240186};
+		aside[]={0.94030994,2.838482e-006,0.34067199};
 	};
 };
 binarizationWanted=0;
@@ -255,8 +255,8 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="ReviveRequiredItems";
-			expression="false";
+			property="SharedObjectives";
+			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
 			class Value
 			{
 				class data
@@ -268,7 +268,7 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=2;
+					value=1;
 				};
 			};
 		};
@@ -404,8 +404,8 @@ class CustomAttributes
 		};
 		class Attribute4
 		{
-			property="SharedObjectives";
-			expression="if (isMultiplayer) then {[_value] spawn bis_fnc_sharedObjectives;};";
+			property="ReviveRequiredItems";
+			expression="false";
 			class Value
 			{
 				class data
@@ -417,7 +417,7 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=1;
+					value=2;
 				};
 			};
 		};
@@ -472,7 +472,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=291;
+		items=326;
 		class Item0
 		{
 			dataType="Group";
@@ -7278,7 +7278,7 @@ class Mission
 			{
 				text="Ле Порт";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Ле Порт"";" \n "call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Ле Порт"";" \n "call next_waypoint;";
 				sizeA=300;
 				sizeB=300;
 				sizeC=5;
@@ -7296,7 +7296,7 @@ class Mission
 			{
 				text="Шапой";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Шапой"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Шапой"";" \n "call next_waypoint;";
 				sizeA=200;
 				sizeB=200;
 				sizeC=5;
@@ -7314,7 +7314,7 @@ class Mission
 			{
 				text="Ла Ривьер";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Ла Ривьер"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Ла Ривьер"";" \n "call next_waypoint;";
 				sizeA=300;
 				sizeB=300;
 				sizeC=5;
@@ -7332,7 +7332,7 @@ class Mission
 			{
 				text="Ла Пессане";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Ла Пессань"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Ла Пессань"";" \n "call next_waypoint;";
 				sizeA=200;
 				sizeB=200;
 				sizeC=5;
@@ -7351,7 +7351,7 @@ class Mission
 			{
 				text="Ларше";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Ларше"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Ларше"";" \n "call next_waypoint;";
 				sizeA=300;
 				sizeB=300;
 				sizeC=5;
@@ -7369,7 +7369,7 @@ class Mission
 			{
 				text="Ла Трините";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Ла Тринит"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Ла Тринит"";" \n "call next_waypoint;";
 				sizeA=300;
 				sizeB=300;
 				sizeC=5;
@@ -7387,7 +7387,7 @@ class Mission
 			{
 				text="Сент-Луис";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Сент-Луис"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Сент-Луис"";" \n "call next_waypoint;";
 				sizeA=200;
 				sizeB=200;
 				sizeC=5;
@@ -7405,7 +7405,7 @@ class Mission
 			{
 				text="Гуис";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Гуис"";" \n "call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Гуис"";" \n "call next_waypoint;";
 				sizeA=100;
 				sizeB=100;
 				sizeC=5;
@@ -7423,7 +7423,7 @@ class Mission
 			{
 				text="Лоулис";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Лоулис"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Лоулис"";" \n "call next_waypoint;";
 				sizeA=100;
 				sizeB=100;
 				sizeC=5;
@@ -7441,7 +7441,7 @@ class Mission
 			{
 				text="Канкон";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Канкон"";" \n "call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Канкон"";" \n "call next_waypoint;";
 				sizeA=200;
 				sizeB=200;
 				sizeC=5;
@@ -7459,7 +7459,7 @@ class Mission
 			{
 				text="Эради";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Эради"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Эради"";" \n "call next_waypoint;";
 				sizeA=150;
 				sizeB=150;
 				sizeC=5;
@@ -7477,7 +7477,7 @@ class Mission
 			{
 				text="Дурдан";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Дурдан"";" \n "call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Дурдан"";" \n "call next_waypoint;";
 				sizeA=300;
 				sizeB=300;
 				sizeC=5;
@@ -7495,7 +7495,7 @@ class Mission
 			{
 				text="Хаудан";
 				condition="(general_terrafox in thisList) || (boss_vehicle in thisList)";
-				onActivation="hint ""Цель проезжает Хаудан"";call next_waypoint;";
+				onActivation="[west, ""HQ""] sideChat ""Цель проезжает Хаудан"";" \n "call next_waypoint;";
 				sizeA=300;
 				sizeB=300;
 				sizeC=5;
@@ -7709,6 +7709,436 @@ class Mission
 			alpha=0;
 			id=1657;
 			atlOffset=-9.1552734e-005;
+		};
+		class Item291
+		{
+			dataType="Marker";
+			position[]={7653.4668,27.1,10706.669};
+			name="drn_villageMarker_0";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1658;
+		};
+		class Item292
+		{
+			dataType="Marker";
+			position[]={7514.0542,28.860001,10558.688};
+			name="drn_villageMarker_1";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1659;
+		};
+		class Item293
+		{
+			dataType="Marker";
+			position[]={7255.71,38.189999,10458.128};
+			name="drn_villageMarker_2";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1660;
+		};
+		class Item294
+		{
+			dataType="Marker";
+			position[]={7125.6738,99.736,10105.715};
+			name="drn_villageMarker_3";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1661;
+			atlOffset=-6.8664551e-005;
+		};
+		class Item295
+		{
+			dataType="Marker";
+			position[]={7031.5889,125.01,9974.5908};
+			name="drn_villageMarker_4";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1662;
+		};
+		class Item296
+		{
+			dataType="Marker";
+			position[]={7901.9551,32.200001,9081.6289};
+			name="drn_villageMarker_5";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1663;
+		};
+		class Item297
+		{
+			dataType="Marker";
+			position[]={7192.833,104.388,9039.9355};
+			name="drn_villageMarker_6";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1664;
+			atlOffset=-0.00016784668;
+		};
+		class Item298
+		{
+			dataType="Marker";
+			position[]={7088.4678,104.154,8895.8477};
+			name="drn_villageMarker_7";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1665;
+			atlOffset=0.00010681152;
+		};
+		class Item299
+		{
+			dataType="Marker";
+			position[]={7379.9702,84.029999,9185.501};
+			name="drn_villageMarker_8";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1666;
+		};
+		class Item300
+		{
+			dataType="Marker";
+			position[]={6622.5459,108.98,8794.0977};
+			name="drn_villageMarker_9";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1667;
+		};
+		class Item301
+		{
+			dataType="Marker";
+			position[]={6032.6768,126.814,8815.0342};
+			name="drn_villageMarker_10";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1668;
+			atlOffset=0.00028991699;
+		};
+		class Item302
+		{
+			dataType="Marker";
+			position[]={6028.874,125.12,8564.5352};
+			name="drn_villageMarker_11";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1669;
+		};
+		class Item303
+		{
+			dataType="Marker";
+			position[]={6123.4219,124.484,8655.8232};
+			name="drn_villageMarker_12";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1670;
+			atlOffset=-0.00023651123;
+		};
+		class Item304
+		{
+			dataType="Marker";
+			position[]={5888.1382,128.87,8689.5137};
+			name="drn_villageMarker_13";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1671;
+		};
+		class Item305
+		{
+			dataType="Marker";
+			position[]={7266.7729,167.569,7932.4448};
+			name="drn_villageMarker_14";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1672;
+			atlOffset=-0.00038146973;
+		};
+		class Item306
+		{
+			dataType="Marker";
+			position[]={7792.2061,199.99001,7539.8208};
+			name="drn_villageMarker_15";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1673;
+		};
+		class Item307
+		{
+			dataType="Marker";
+			position[]={7035.8652,79.818001,7127.5771};
+			name="drn_villageMarker_16";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1674;
+			atlOffset=-0.00048828125;
+		};
+		class Item308
+		{
+			dataType="Marker";
+			position[]={6512.7495,152.41515,7631.0356};
+			name="drn_villageMarker_17";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1675;
+		};
+		class Item309
+		{
+			dataType="Marker";
+			position[]={5521,335.85999,7010};
+			name="drn_villageMarker_18";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1676;
+		};
+		class Item310
+		{
+			dataType="Marker";
+			position[]={7113.8799,72.084,6069.1968};
+			name="drn_villageMarker_19";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=100;
+			b=100;
+			id=1677;
+			atlOffset=7.6293945e-005;
+		};
+		class Item311
+		{
+			dataType="Marker";
+			position[]={6581.4707,156.6006,6035.0493};
+			name="drn_villageMarker_20";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1678;
+		};
+		class Item312
+		{
+			dataType="Marker";
+			position[]={7600.6685,31.639999,6504.5547};
+			name="drn_villageMarker_21";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1679;
+		};
+		class Item313
+		{
+			dataType="Marker";
+			position[]={7918,39.054008,3814};
+			name="drn_villageMarker_22";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=500;
+			b=500;
+			id=1680;
+		};
+		class Item314
+		{
+			dataType="Marker";
+			position[]={5871,54.950001,3529};
+			name="drn_villageMarker_23";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1681;
+		};
+		class Item315
+		{
+			dataType="Marker";
+			position[]={5416.624,43.995255,2777.9023};
+			name="drn_villageMarker_24";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1682;
+		};
+		class Item316
+		{
+			dataType="Marker";
+			position[]={3763.4277,18.526773,3253.0557};
+			name="drn_villageMarker_25";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1683;
+		};
+		class Item317
+		{
+			dataType="Marker";
+			position[]={5570.7974,104.12893,4220.4648};
+			name="drn_villageMarker_26";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1684;
+		};
+		class Item318
+		{
+			dataType="Marker";
+			position[]={3099.2,224.35992,6336.6538};
+			name="drn_villageMarker_27";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1685;
+		};
+		class Item319
+		{
+			dataType="Marker";
+			position[]={3116.2493,230.35068,6826.9575};
+			name="drn_villageMarker_28";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1686;
+		};
+		class Item320
+		{
+			dataType="Marker";
+			position[]={5049,408,7368};
+			name="drn_villageMarker_29";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1687;
+			atlOffset=-0.89004517;
+		};
+		class Item321
+		{
+			dataType="Marker";
+			position[]={6155,118.7748,10742};
+			name="drn_villageMarker_30";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1688;
+		};
+		class Item322
+		{
+			dataType="Marker";
+			position[]={5549.5332,71.760002,11191.031};
+			name="drn_villageMarker_31";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1689;
+		};
+		class Item323
+		{
+			dataType="Marker";
+			position[]={3587.8975,128.99284,8497.5811};
+			name="drn_villageMarker_32";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1690;
+		};
+		class Item324
+		{
+			dataType="Marker";
+			position[]={4559,376.32324,8158};
+			name="drn_villageMarker_33";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=200;
+			b=200;
+			id=1691;
+			atlOffset=-1.1375732;
+		};
+		class Item325
+		{
+			dataType="Marker";
+			position[]={3786.823,68.726349,4932.1123};
+			name="drn_villageMarker_34";
+			markerType="ELLIPSE";
+			type="ellipse";
+			alpha=0;
+			a=50;
+			b=50;
+			id=1692;
 		};
 	};
 };

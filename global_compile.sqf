@@ -62,6 +62,7 @@ drn_fnc_PopulateAquaticPatrol = _path_drn + "\fn_PopulateAquaticPatrol.sqf" call
 drn_fnc_DepopulateAquaticPatrol = _path_drn + "\fn_DepopulateAquaticPatrol.sqf" call g_compile;
 drn_fnc_InitAquaticPatrolMarkers = _path_drn + "\fn_InitAquaticPatrolMarkers.sqf" call g_compile;
 drn_fnc_GarrisonUnits = _path_drn + "\fn_GarrisonUnits.sqf" call g_compile;
+drn_fnc_RoadBlocks = _path_drn + "\fn_RoadBlocks.sqf" call g_compile;
 
 
 
@@ -93,6 +94,7 @@ fnc_handleRating = _path_common + "\fn_handleRating.sqf" call g_compile;
 fnc_handleScore = _path_common + "\fn_handleScore.sqf" call g_compile;
 fnc_CheckCampDistance = _path_common + "\fn_CheckCampDistance.sqf" call g_compile;
 fnc_FireSmokeFX = _path_common + "\fn_FireSmokeFX.sqf" call g_compile;
+fnc_RoadBlock = _path_common + "\fn_RoadBlock.sqf" call g_compile;
 
 
 _path_ai = "functions\AI";

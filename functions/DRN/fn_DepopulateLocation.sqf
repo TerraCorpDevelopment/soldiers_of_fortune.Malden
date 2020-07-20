@@ -8,9 +8,9 @@ _location = _this select 0;
 _markerName = _location select 0;
 _soldierObjects = _location select 2;
 
-if (A3E_Debug) then {
-    player sideChat "Depopulating location (" + _markerName + ")";
-};
+//if (A3E_Debug) then {
+//    player sideChat "Depopulating location (" + _markerName + ")";
+//};
 
 {
     private ["_group", "_soldierObject", "_hasScript"];

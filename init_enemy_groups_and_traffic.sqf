@@ -1,10 +1,11 @@
 private ["_minEnemiesPerGroup", "_maxEnemiesPerGroup"];
 
 _enemyFrequency = 2;
-_enemySpawnDistance = 1000;
+_enemySpawnDistance = 500;
 _groupsPerSqkm = 1.2;
 _enemyMinSkill = 0.2;
 _enemyMaxSkill = 0.7;
+_villagePatrolSpawnArea = 10000;
 
 // Initialize ambient infantry groups
 
@@ -63,6 +64,36 @@ _radius = (_enemySpawnDistance + 500) / 1000;
 _infantryGroupsCount = round (_groupsPerSqkm * _radius * _radius * 3.141592);
 	
 [sof_group, resistance, arr_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup] spawn fnc_AmbientInfantry;
+
+
+//Village Patrols
+switch (_enemyFrequency) do
+{
+	case 1: // 1-2 players
+    {
+	    _minEnemiesPerGroup = 2;
+	    _maxEnemiesPerGroup = 4;
+    };
+    case 2: // 3-5 players
+    {
+        _minEnemiesPerGroup = 3;
+        _maxEnemiesPerGroup = 6;
+    };
+    default // 6-8 players
+    {
+        _minEnemiesPerGroup = 4;
+        _maxEnemiesPerGroup = 8;
+    };
+};
+        
+_fnc_OnSpawnGroup = {
+    {
+        //_x call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
+    } foreach units _this;
+};
+        
+[sof_group, "drn_villageMarker_", resistance, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea] call drn_fnc_InitVillagePatrols;
+
     
 // Initialize the Escape military and civilian traffic
 private ["_vehiclesPerSqkm", "_radius", "_vehiclesCount", "_fnc_onSpawnCivilian", "_vehicleClasses"];
@@ -179,3 +210,5 @@ _roadBlockCount = round ((_maxEnemySpawnDistanceKm * _maxEnemySpawnDistanceKm * 
 if (_roadBlockCount < 1) then {
 	_roadBlockCount = 1;
 };
+
+[_players_group, resistance, arr_InfantryTypes, arr_RoadBlock_MannedVehicleTypes, _roadBlockCount, _enemySpawnDistance, _enemySpawnDistance + 500, 750, 300, _fnc_OnSpawnInfantryGroup, _fnc_OnSpawnMannedVehicle] spawn drn_fnc_RoadBlocks;

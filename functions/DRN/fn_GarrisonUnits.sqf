@@ -1,7 +1,7 @@
 private ["_side", "_soldiertype", "_markername"];
 
 _side = _this select 0;
-_soldiertype = a3e_arr_Escape_InfantryTypes;
+_soldiertype = arr_InfantryTypes;
 _markername = _this select 2;
 _locationObject = _this select 3;
 _locationPos = _locationObject select 3;

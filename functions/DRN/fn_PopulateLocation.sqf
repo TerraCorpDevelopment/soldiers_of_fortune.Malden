@@ -6,7 +6,7 @@ private ["_script", "_groupMemberCount", "_fortify", "_noFollow", "_locationPos"
 private ["_spawnPos", "_firstGroup"];
 
 _locationObject = _this select 0;
-_side = _this select 1;
+_side = resistance;
 _maxGroupsCount = _this select 2;
 if (count _this > 3) then {_debug = _this select 3;} else {_debug = false;};
 
@@ -62,7 +62,7 @@ _firstGroup = true;
             //_script = [_soldier, _markerName,false] spawn A3E_fnc_RandomPatrolRoute;
             //_soldierObject set [5, _script];
             //_soldierObject set [6, true];
-			_script = [_group, _markerName] spawn A3E_fnc_Patrol;
+			_script = [_group, _markerName] spawn fnc_Patrol;
 			_group setvariable["A3E_GroupPatrolScript",_script];
         };
 
