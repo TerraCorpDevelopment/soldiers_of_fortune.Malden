@@ -21,6 +21,6 @@ private _unTask = [sof_group, "UniformTask", [_description_un, _title_un, _waypo
 #include "Scripts\Functions.sqf";
 [] call aa_spawn;
 call create_boss_vehicle;
-//[] call create_side_missions;
 call compile preprocessFileLineNumbers "Scripts\DRN\CommonLib\CommonLib.sqf";
 call post_init;
+[] call create_side_missions;

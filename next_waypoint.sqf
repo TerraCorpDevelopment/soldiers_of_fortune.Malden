@@ -3,8 +3,12 @@ _general_x = _general_pos select 0;
 _general_y = _general_pos select 1;
 
 _selected = false;
+private ["_location"];
+if (count _this > 0) then {_location = _this select 0;} else {_location = "";};
 
 //проверяем, как далеко ещё ехать
+
+diag_log (count next_pos);
 if ((count next_pos) != 0) then {
 	_next_x = next_pos select 0;
 	_next_y = next_pos select 1;
@@ -19,6 +23,12 @@ if ((count next_pos) != 0) then {
 	};
 };
 
+diag_log  _location;
+
+if (_location != "") then {
+	hintSilent ("Цель проезжает " + _location);
+};
+
 if _selected exitWith {};
 
 _markers = [];
@@ -30,7 +40,10 @@ _markers = [];
 } forEach allMapMarkers;
 
 while { !_selected } do {
-	next_pos = getMarkerPos (selectRandom _markers);
+	_mark = selectRandom _markers;
+	//[west, "HQ"] sideChat ("Цель едет в " + _mark);
+	next_pos = getMarkerPos _mark;
+	//systemChat next_pos;
 	_next_x = next_pos select 0;
 	_next_y = next_pos select 1;
 	_dx = _general_x - _next_x;

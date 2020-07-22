@@ -22,7 +22,7 @@ _unitTypes =
 */
 _pos = _this select 0;
 _group = _this select 1;
-_unit_types = ["O_Soldier_F"];
+_unit_types = arr_InfantryTypes;
 _r_count = floor random 10;
 _players_count = count units sof_group;
 _units_count = _r_count + 5 * _players_count;

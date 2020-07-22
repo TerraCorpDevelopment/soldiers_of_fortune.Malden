@@ -39,7 +39,7 @@ _possible_pos = [];
 _pos = getMarkerPos (selectRandom _possible_pos);
 boss_vehicle = createVehicle [_veh, _pos];
 for "_i" from 1 to 3 do {
-	_unit = general_group createUnit ["I_E_Crew_F", _pos, [], 0, "NONE"];
+	_unit = general_group createUnit ["I_E_Soldier_F", _pos, [], 0, "NONE"];
 	_unit moveInAny boss_vehicle;
 };
 general_terrafox moveInCargo boss_vehicle;

@@ -85,9 +85,9 @@ for "_m" from 1 to _count do {
 	switch (_task_type) do {
 		case "assassination": {
 			[_marker_pos] call outpost_1;
-			_group = createGroup [east, true];
+			_group = createGroup [resistance, true];
 			[_marker_pos, _group] call spawn_mission_units;
-			_new_group = createGroup [east, true];
+			_new_group = createGroup [resistance, true];
 			_officer = _new_group createUnit ["O_V_Soldier_TL_hex_F", _marker_pos, [], 0, "NONE"];
 			_officer disableAI "PATH";
 			_officer setRank "COLONEL";
@@ -101,7 +101,7 @@ for "_m" from 1 to _count do {
 		};
 		case "rescue": {
 			[_marker_pos] call outpost_3;
-			_group = createGroup [east, true];
+			_group = createGroup [resistance, true];
 			[_marker_pos, _group] call spawn_mission_units;
 			_new_group = createGroup [independent, true];
 			_resc_unit_pos = [((_marker_pos select 0) + 5), (_marker_pos select 1), 0];
@@ -127,11 +127,11 @@ for "_m" from 1 to _count do {
 		};
 		default { // type attack
 			[_marker_pos] call outpost_2;
-			_group = createGroup [east, true];
+			_group = createGroup [resistance, true];
 			[_marker_pos, _group] call spawn_mission_units;
 			trg = createTrigger ["EmptyDetector", _marker_pos];
 			trg setTriggerArea [200, 200, 0, false];
-			trg setTriggerActivation ["EAST", "NOT PRESENT", false];
+			trg setTriggerActivation ["GUER", "NOT PRESENT", false];
 			trg_cond = "this";
 			special_code = "";
 		};
@@ -150,9 +150,10 @@ for "_m" from 1 to _count do {
 	
 	_weapon_box = "x = createVehicle ['C_supplyCrate_F', " + _weapon_box_pos_str + "]; [x] call weapon_box_filling;";
 	_launcher_box = "x = createVehicle ['C_supplyCrate_F', " + _launcher_box_pos_str + "]; [x] call launcher_box_filling;";
+	_message = "hint 'Не забудьте забрать награду на базе...';";
 	
 	//_win_statement = "['" + _task_id + "', 'Succeeded'] call BIS_fnc_taskSetState;";
-	_win_statement = special_code + _set_task_win + _weapon_box + _launcher_box;
+	_win_statement = special_code + _set_task_win + _weapon_box + _launcher_box + _message;
 	
 	trg setTriggerStatements [trg_cond, _win_statement, ""];
 
