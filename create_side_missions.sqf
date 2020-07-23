@@ -87,8 +87,8 @@ for "_m" from 1 to _count do {
 			[_marker_pos] call outpost_1;
 			_group = createGroup [resistance, true];
 			[_marker_pos, _group] call spawn_mission_units;
-			_new_group = createGroup [resistance, true];
-			_officer = _new_group createUnit ["O_V_Soldier_TL_hex_F", _marker_pos, [], 0, "NONE"];
+			//_new_group = createGroup [resistance, true];
+			_officer = _group createUnit ["I_E_Soldier_MP_F", _marker_pos, [], 0, "NONE"];
 			_officer disableAI "PATH";
 			_officer setRank "COLONEL";
 			_officer setPos _marker_pos;

@@ -1,14 +1,14 @@
 private ["_minEnemiesPerGroup", "_maxEnemiesPerGroup"];
 
 _enemyFrequency = 2;
-_enemySpawnDistance = 500;
+_enemySpawnDistance = 300;
 _groupsPerSqkm = 1.2;
 _enemyMinSkill = 0.2;
 _enemyMaxSkill = 0.7;
 _villagePatrolSpawnArea = 10000;
 
 // Initialize ambient infantry groups
-
+_players_group = call fnc_GetPlayerGroup;
 _fnc_OnSpawnAmbientInfantryUnit = {
 	//_this call drn_fnc_Escape_OnSpawnGeneralSoldierUnit;
 };
@@ -61,9 +61,9 @@ switch (_enemyFrequency) do
 };
 
 _radius = (_enemySpawnDistance + 500) / 1000;
-_infantryGroupsCount = round (_groupsPerSqkm * _radius * _radius * 3.141592);
+_infantryGroupsCount = 20;//round (_groupsPerSqkm * _radius * _radius * 3.141592);
 	
-[sof_group, resistance, arr_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup] spawn fnc_AmbientInfantry;
+[_players_group, resistance, arr_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup] spawn fnc_AmbientInfantry;
 
 
 //Village Patrols
@@ -92,7 +92,7 @@ _fnc_OnSpawnGroup = {
     } foreach units _this;
 };
         
-[sof_group, "drn_villageMarker_", resistance, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea] call drn_fnc_InitVillagePatrols;
+[_players_group, "drn_villageMarker_", resistance, "INS", 5, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, _enemySpawnDistance, _villagePatrolSpawnArea] call drn_fnc_InitVillagePatrols;
 
     
 // Initialize the Escape military and civilian traffic
@@ -178,7 +178,6 @@ switch (_enemyFrequency) do
 	
 _radius = _enemySpawnDistance + 500;
 _vehiclesCount = round (_vehiclesPerSqkm * (_radius / 1000) * (_radius / 1000) * 3.141592);
-_players_group = sof_group;
 [_players_group,_vehiclesCount,_enemySpawnDistance,_radius,_enemyMinSkill, _enemyMaxSkill] spawn {
 	params["_players_group","_vehiclesCount","_enemySpawnDistance","_radius","_enemyMinSkill", "_enemyMaxSkill"];
 	sleep 10;//300;
@@ -197,7 +196,7 @@ switch (_enemyFrequency) do {
 		_areaPerRoadBlock = 4.19;
 	};
 	case 2: {
-		_areaPerRoadBlock = 3.14;
+		_areaPerRoadBlock = 2;
 	};
 	default {
 		_areaPerRoadBlock = 2.5;

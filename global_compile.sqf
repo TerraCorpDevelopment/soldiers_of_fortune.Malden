@@ -38,6 +38,7 @@ populate_vehicles = "populate_vehicles.sqf" call g_compile;
 post_init = "init_enemy_groups_and_traffic.sqf" call g_compile;
 create_boss_vehicle = "create_boss_vehicle.sqf" call g_compile;
 next_waypoint = "next_waypoint.sqf" call g_compile;
+create_road_triggers = "create_road_triggers.sqf" call g_compile;
 
 _path_drn = "functions\DRN";
 fnc_AmbientInfantry = _path_drn + "\fn_AmbientInfantry.sqf" call g_compile;

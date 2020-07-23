@@ -43,5 +43,4 @@ for "_i" from 1 to 3 do {
 	_unit moveInAny boss_vehicle;
 };
 general_terrafox moveInCargo boss_vehicle;
-next_pos = [];
 call next_waypoint;
