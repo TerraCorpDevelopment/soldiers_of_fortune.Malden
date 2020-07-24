@@ -9,7 +9,6 @@ _allLocations = [];
 } forEach nearestLocations [_general_pos, ["NameCity", "NameCityCapital"], 40000];
 
 _next_pos = selectRandom _allLocations;
-systemChat (toString _next_pos);
 _trg = createTrigger ["EmptyDetector", _next_pos];
 _trg setTriggerArea [30, 30, 0, false];
 _trg setTriggerActivation ["VEHICLE", "PRESENT", true];

@@ -165,12 +165,13 @@ while {true} do {
 		
         _activeGroups set [count _activeGroups, _group];
         _activeUnits = _activeUnits + units _group;
+        
 
 //        if (A3E_Debug) then {
             //["Infantry group created! Total groups = " + str count _activeGroups] call drn_fnc_CL_ShowDebugTextAllClients;
         //};
 	};
-    
+
     _atScriptStartUp = false;
 
 	
@@ -182,12 +183,13 @@ while {true} do {
         private ["_unit"];
         private ["_unitIsFarAway"];
         _unit = _x;
+        diag_log "Unit ";
+        diag_log _unit;
 
         _unitIsFarAway = true;
         {
             private ["_hasGroup", "_group", "_groupUnit", "_referenceUnit"];
             _referenceUnit = vehicle _x;
-            
             // A unit is far away if its alive and beyond max spawn distance, or if it's dead and beyond garbage collect distance.
             if ((((alive _unit) && (_referenceUnit distance _unit < _maxSpawnDistance)) || ((!alive _unit) && (_referenceUnit distance _unit < _garbageCollectDistance)))) exitWith {
                 _unitIsFarAway = false;
