@@ -11,3 +11,7 @@
 [west, "AssaultMediumTropic"] call BIS_fnc_addRespawnInventory;
 [west, "AssaultMediumForest"] call BIS_fnc_addRespawnInventory;
 [west, "AssaultMediumCTRGTropic"] call BIS_fnc_addRespawnInventory;
+
+//opfor
+[east, "AssaultMediumRusOlive"] call BIS_fnc_addRespawnInventory;
+[east, "AssaultMediumRusTaiga"] call BIS_fnc_addRespawnInventory;

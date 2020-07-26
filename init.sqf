@@ -49,4 +49,16 @@ private _unTask = [sof_group, "UniformTask", [_description_un, _title_un, _waypo
 	waitUntil {player == player};
 	player enableStamina false;
 	player addEventHandler ["Respawn", {(_this select 0) enableStamina false}];
+	player addEventHandler ["HandleHeal", {
+	_this spawn {
+		params ["_injured","_healer"];
+		_damage = damage _injured;
+		if (_injured == _healer) then {
+			waitUntil {damage _injured != _damage};
+			if (damage _injured < _damage) then {
+				_injured setDamage 0;
+			};
+		};
+	};
+}];
 };

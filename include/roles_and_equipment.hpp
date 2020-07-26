@@ -523,4 +523,100 @@ class CfgRespawnInventory
 		uniformClass = "U_B_CTRG_Soldier_F";
 		backpack = "B_AssaultPack_tna_F";
 	};
+	class AssaultMediumRusOlive 
+	{
+		displayName = "Гранит Б";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa";
+		role = "Assault";
+		weapons[] = {
+			"arifle_AK12_lush_F",
+			"hgun_Rook40_F"
+		};
+		magazines[] = {
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"16Rnd_9x21_Mag",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"HandGrenade",
+			"HandGrenade",
+			"HandGrenade",
+			"HandGrenade",
+			"SmokeShellRed",
+			"SmokeShellRed",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		linkedItems[] = {
+			"H_HelmetAggressor_cover_F",
+			"V_SmershVest_01_F",
+			"G_Balaclava_TI_G_blk_F",
+			"optic_Arco_AK_lush_F",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio",
+			"O_NVGoggles_grn_F"
+		};
+		uniformClass = "U_O_R_Gorka_01_F";
+		backpack = "B_FieldPack_green_F";
+	};
+	class AssaultMediumRusTaiga 
+	{
+		displayName = "Гранит Т";
+		icon = "\A3\Ui_f\data\GUI\Cfg\Ranks\corporal_gs.paa";
+		role = "Assault";
+		weapons[] = {
+			"arifle_AK12_lush_F",
+			"hgun_Rook40_F"
+		};
+		magazines[] = {
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"16Rnd_9x21_Mag",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"30rnd_762x39_AK12_Lush_Mag_F",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"16Rnd_9x21_Mag",
+			"HandGrenade",
+			"HandGrenade",
+			"HandGrenade",
+			"HandGrenade",
+			"SmokeShellRed",
+			"SmokeShellRed",
+			"SmokeShellRed",
+			"SmokeShellRed"
+		};
+		items[] = {
+			"FirstAidKit",
+			"FirstAidKit"
+		};
+		linkedItems[] = {
+			"H_HelmetAggressor_cover_taiga_F",
+			"V_SmershVest_01_F",
+			"G_Balaclava_TI_G_blk_F",
+			"optic_Arco_AK_lush_F",
+			"acc_flashlight",
+			"ItemMap",
+			"ItemCompass",
+			"ItemWatch",
+			"ItemRadio",
+			"O_NVGoggles_grn_F"
+		};
+		uniformClass = "U_O_R_Gorka_01_camo_F";
+		backpack = "B_FieldPack_taiga_F";
+	};
 };
