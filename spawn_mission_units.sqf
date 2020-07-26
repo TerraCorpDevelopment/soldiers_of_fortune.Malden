@@ -64,19 +64,19 @@ for "_i" from 1 to _units_count do
 		// RPG every 7 units, starting from second one
 		case (_i % 7 == 0):
 		{
-			_unit addBackpack "B_Carryall_ocamo";
+			_unit addBackpack "B_Carryall_oli";
 			_unit addWeapon "arifle_Katiba_F";
 			_unit addMagazine "Titan_AT";
-			_unit addWeapon "launch_Titan_short_F";
+			_unit addWeapon "launch_I_Titan_short_F";
 			_unit addMagazine "Titan_AT";
 			_unit addMagazine "Titan_AT";
 		};
 		case (_i % 8 == 0):
 		{
-			_unit addBackpack "B_Carryall_ocamo";
+			_unit addBackpack "B_Carryall_oli";
 			_unit addWeapon "arifle_Katiba_F";
 			_unit addMagazine "Titan_AA";
-			_unit addWeapon "launch_O_Titan_F";
+			_unit addWeapon "launch_I_Titan_eaf_F";
 			_unit addMagazine "Titan_AA";
 			_unit addMagazine "Titan_AA";
 		};

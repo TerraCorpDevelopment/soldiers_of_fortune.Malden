@@ -28,6 +28,7 @@ private ["_DebugMarkers", "_DebugMarkerNo", "_DebugMarkerName", "_isFaction", "_
 private ["_fnc_OnSpawnUnit", "_fnc_OnSpawnGroup"];
 
 _referenceGroup = _this select 0;
+if (count units _referenceGroup == 0) exitWith {};
 _side = _this select 1;
 _infantryClasses = _this select 2;
 if (count _this > 3) then {_groupsCount = _this select 3;} else {_groupsCount = 20;};
@@ -130,7 +131,8 @@ while {true} do {
         for [{_i = 0}, {_i < _unitsInGroup}, {_i = _i + 1}] do {
             _infantryType = _possibleInfantryTypes select floor (random count _possibleInfantryTypes);
             //_infantryType createUnit [_spawnPos, _group,"", _skill, "PRIVATE"];
-			_group createUnit [_infantryType, _spawnPos, [], 0, "FORM"];
+			_unit = _group createUnit ["I_E_Soldier_F", _spawnPos, [], 0, "FORM"];
+            [_unit] call set_bot_equipment;
         };
 
         {
@@ -183,8 +185,6 @@ while {true} do {
         private ["_unit"];
         private ["_unitIsFarAway"];
         _unit = _x;
-        diag_log "Unit ";
-        diag_log _unit;
 
         _unitIsFarAway = true;
         {

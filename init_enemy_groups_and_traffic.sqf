@@ -27,8 +27,8 @@ _fnc_OnSpawnAmbientInfantryGroup = {
 				deleteWaypoint [_this, _i];
 			};
 				
-			_scriptHandle = [_this, drn_searchAreaMarkerName, (getPos _enemyUnit)] spawn drn_fnc_searchGroup;
-			_this setVariable ["drn_scriptHandle", _scriptHandle];
+			//_scriptHandle = [_this, drn_searchAreaMarkerName, (getPos _enemyUnit)] spawn drn_fnc_searchGroup;
+			//_this setVariable ["drn_scriptHandle", _scriptHandle];
 		};
 			
 		sleep 5;
@@ -61,7 +61,7 @@ switch (_enemyFrequency) do
 };
 
 _radius = (_enemySpawnDistance + 500) / 1000;
-_infantryGroupsCount = 20;//round (_groupsPerSqkm * _radius * _radius * 3.141592);
+_infantryGroupsCount = 10;//round (_groupsPerSqkm * _radius * _radius * 3.141592);
 	
 [_players_group, resistance, arr_InfantryTypes, _infantryGroupsCount, _enemySpawnDistance + 200, _enemySpawnDistance + 500, _minEnemiesPerGroup, _maxEnemiesPerGroup, _enemyMinSkill, _enemyMaxSkill, 750, _fnc_OnSpawnAmbientInfantryUnit, _fnc_OnSpawnAmbientInfantryGroup] spawn fnc_AmbientInfantry;
 
